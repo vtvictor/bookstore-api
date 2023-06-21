@@ -16,8 +16,7 @@ import com.victor.bookstore.repositories.LivroRepository;
 public class BookstoreApplication implements CommandLineRunner{
 
 	@Autowired
-	private CategoriaRepository categoriaRepository;
-	
+	private CategoriaRepository categoriaRepository;	
 	@Autowired
 	private  LivroRepository livroRepository;
 	
@@ -36,6 +35,8 @@ public class BookstoreApplication implements CommandLineRunner{
 		
 		cat1.getLivros().addAll(Arrays.asList(livro1));
 		
+		this.categoriaRepository.saveAll(Arrays.asList(cat1));
+		this.livroRepository.saveAll(Arrays.asList(livro1));
 		
 	}
 
